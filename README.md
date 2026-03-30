@@ -31,7 +31,7 @@ The project is strictly modularized to ensure high maintainability and clear sep
     ```
 3.  Start Game:
     ```zsh
-    python3 main.py
+    python main.py
     ```
 
 # Future Roadmap

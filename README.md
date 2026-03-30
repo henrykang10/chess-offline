@@ -6,17 +6,17 @@ A high-fidelity chess engine built in **Python 3.12**, focusing on the **Model-V
 
 The project is strictly modularized to ensure high maintainability and clear separation of concerns:
 
-* `logic/` (The Controller):** Contains the `Validator` gateway. It acts as the "referee," ensuring all moves follow official FIDE rules.
-* `model/` (The Data Layer):** Defines the `Board` and `Piece` objects. It manages the internal state and handles FEN (Forsyth-Edwards Notation) parsing.
-* `ui/` (The View):** Manages the terminal-based rendering, providing a clean CLI (Command Line Interface) for player interaction.
+* `logic/` (The Controller): Contains the `Validator` gateway. It acts as the "referee," ensuring all moves follow official FIDE rules.
+* `model/` (The Data Layer): Defines the `Board` and `Piece` objects. It manages the internal state and handles FEN (Forsyth-Edwards Notation) parsing.
+* `ui/` (The View): Manages the terminal-based rendering, providing a clean CLI (Command Line Interface) for player interaction.
 
 
 
 # Key Technical Features
 
-* OOP Design:** Extensive use of Classes and Inheritance to represent chess pieces and board states.
-* Extensible Validator:** Built with a "plug-and-play" logic gateway, allowing for easy addition of complex rules like En Passant or Castling.
-* Dependency-Light:** Optimized for performance with minimal external dependencies, ensuring a fast and portable execution environment.
+* OOP Design: Extensive use of Classes and Inheritance to represent chess pieces and board states.
+* Extensible Validator: Built with a "plug-and-play" logic gateway, allowing for easy addition of complex rules like En Passant or Castling.
+* Dependency-Light: Optimized for performance with minimal external dependencies, ensuring a fast and portable execution environment.
 
 # How to Run
 

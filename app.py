@@ -10,15 +10,20 @@ st.set_page_config(page_title="♟ ChessOnline", layout="centered")
 
 if not firebase_admin._apps:
     try:
-        # Streamlit Cloud: read from secrets
+        # 1. Pull the dictionary from secrets
         key_dict = dict(st.secrets["firebase"])
-        # private_key newlines are escaped in TOML — fix them
-        key_dict["private_key"] = key_dict["private_key"].replace("\\n", "\n")
+        
+        # 2. Handle the literal '\n' strings by replacing them with real newlines
+        # This fixes the "Unable to load PEM file" error
+        if "private_key" in key_dict:
+            key_dict["private_key"] = key_dict["private_key"].replace("\\n", "\n")
+        
+        # 3. Initialize the Certificate with the cleaned dictionary
         cred = credentials.Certificate(key_dict)
-    except (KeyError, FileNotFoundError):
-        # Local: read from file
-        cred = credentials.Certificate("firebase_key.json")
-    firebase_admin.initialize_app(cred)
+        firebase_admin.initialize_app(cred)
+        
+    except Exception as e:
+        st.error(f"Firebase failed to load: {e}")
 
 # Get project_id for REST URL
 try:

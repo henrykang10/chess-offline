@@ -20,16 +20,16 @@ The project is strictly modularized to ensure high maintainability and clear sep
 
 # How to Run
 
-1.  Clone the Repo:**
+1.  Clone the Repo:
     ```zsh
     git clone [https://github.com/henrykang10/chess-offline.git](https://github.com/henrykang10/chess-offline.git)
     cd chess-offline
     ```
-2.  Install Requirements:**
+2.  Install Requirements:
     ```zsh
     pip install -r requirements.txt
     ```
-3.  Start Game:**
+3.  Start Game:
     ```zsh
     python3 main.py
     ```
